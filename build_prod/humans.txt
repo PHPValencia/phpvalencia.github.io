@@ -1,0 +1,15 @@
+/* INSPIRATION */
+
+  http://valenciarb.org/
+
+/* THANKS */
+
+  Original site idea: Tony Camaiani
+  Site: http://tony.camaiani.it
+  Twitter: https://twitter.com/tonycamaiani
+  Location: Valencia, ES
+
+/* SITE */
+
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, normalize.css
