@@ -1,0 +1,57 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+function normalize_event_date(string $dateTime): string
+{
+    $dt = new DateTime($dateTime);
+    return $dt->format('Y-m-d');
+}
+
+function event_address(array $venue): string
+{
+    return "{$venue['address']}, {$venue['city']}";
+}
+
+function convert_event_to_markdown(array $data): string
+{
+    $eventDate = new DateTime($data["dateTime"]);
+
+    $title = $data["title"];
+    $date = $eventDate->format('Y-m-d');
+    $start = $eventDate->format('H:i');
+    $address = event_address($data["venue"]);
+    $meetup = $data["eventUrl"];
+    $description = $data["description"];
+
+    $content = sprintf('---
+title: "%s"
+date: %s
+start: "%s"
+address: "%s"
+meetup: "%s"
+section: content
+---
+
+%s
+', $title, $date, $start, $address, $meetup, $description);
+
+    return $content;
+}
+
+$files = glob(__DIR__ . "/../meetup_past_events_data/*.json");
+
+foreach ($files as $file) {
+    echo "Processing $file...\n";
+
+    $data = json_decode(file_get_contents($file), true);
+    $markdown = convert_event_to_markdown($data);
+    $eventDate = normalize_event_date($data["dateTime"]);
+    $outputFile = __DIR__ . "/../source/_events/{$eventDate}_{$data['id']}.md";
+    file_put_contents($outputFile, $markdown);
+
+    echo "Created $outputFile\n";
+}
+
+echo "All done.\n";
