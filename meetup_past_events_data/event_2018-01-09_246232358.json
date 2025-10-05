@@ -1,0 +1,274 @@
+{
+    "__typename": "Event",
+    "id": "246232358",
+    "token": "246232358",
+    "title": "Construye apps bas\u00e1ndote en los 12 factors",
+    "description": "Empezamos el a\u00f1o fuerte con una charla sobre dise\u00f1o de apps. Y no cualquier dise\u00f1o. David Lluna (@llunatweets (https://twitter.com/llunatweets) nos hablar\u00e1 sobre \"The twelve-factor app\" que emerge como **una serie de buenas pr\u00e1cticas** extra\u00eddas de la experiencia de Heroku en la construcci\u00f3n y operaci\u00f3n de su plataforma.\n\nhttps://12factor.net/\n\nAl aplicar \"12-factor\" **mejoraremos la escalabilidad, resiliencia y mantenibilidad** de nuestras aplicaciones y allanaremos el camino hacia la posibilidad de aplicar \"CI/CD\"\n\nEn esta charla daremos un repaso al \"12-factor\" con ejemplos pr\u00e1cticos de cada uno de los 12 factores.\n\n\u00a1No te pierdas esta gran charla que te har\u00e1 mejor profesional!\n\nRecuerda que despu\u00e9s de la charla solemos quedarnos a cenar por alg\u00fan bar cercano. La asistencia no es obligatoria, pero \u00a1an\u00edmate que pasar\u00e1s un buen rato!",
+    "eventUrl": "https://www.meetup.com/php-valencia/events/246232358/",
+    "status": "PAST",
+    "eventType": "PHYSICAL",
+    "featuredEventPhoto": null,
+    "eventHosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        },
+        {
+            "__typename": "EventHost",
+            "memberId": "189545461",
+            "id": "189545461",
+            "name": "Valentin Rusev",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "247642760"
+            }
+        },
+        {
+            "__typename": "EventHost",
+            "memberId": "149587382",
+            "id": "149587382",
+            "name": "David P.",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "246063978"
+            }
+        }
+    ],
+    "dateTime": "2018-01-09T19:00:00+01:00",
+    "endTime": "2018-01-09T21:00:00+01:00",
+    "isFeatured": false,
+    "venue": {
+        "__typename": "Venue",
+        "id": "25679358",
+        "name": "Geekshubs",
+        "address": "Vicente Barrera Cambra 6",
+        "city": "46020, Valencia",
+        "state": "",
+        "country": "es",
+        "lat": 39.481739,
+        "lng": -0.356027
+    },
+    "maxTickets": 0,
+    "series": null,
+    "rsvps": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "waitingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "goingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 20
+    },
+    "waitlistMode": "AUTO",
+    "guestsAllowed": false,
+    "numberOfAllowedGuests": 0,
+    "proCompleteRsvp": null,
+    "topics": {
+        "__typename": "TopicsConnection",
+        "edges": []
+    },
+    "rsvpSettings": {
+        "__typename": "RsvpOpenSettings",
+        "rsvpOpenTime": null,
+        "rsvpCloseTime": null
+    },
+    "covidPrecautions": {
+        "__typename": "CovidPrecautions",
+        "masks": null,
+        "vaccinations": null,
+        "details": null,
+        "venueType": null
+    },
+    "isNetworkEvent": false,
+    "hosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        },
+        {
+            "__typename": "EventHost",
+            "memberId": "189545461",
+            "id": "189545461",
+            "name": "Valentin Rusev",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "247642760"
+            }
+        },
+        {
+            "__typename": "EventHost",
+            "memberId": "149587382",
+            "id": "149587382",
+            "name": "David P.",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "246063978"
+            }
+        }
+    ],
+    "feeSettings": null,
+    "networkEvent": null,
+    "speakerDetails": null,
+    "socialProofInsights": null,
+    "group": {
+        "__typename": "Group",
+        "id": "18577011",
+        "name": "PHP Valencia",
+        "isPrivate": false,
+        "timezone": "Europe/Madrid",
+        "link": "https://www.meetup.com/PHP-Valencia",
+        "joinMode": "OPEN",
+        "topicCategory": {
+            "__typename": "TopicCategory",
+            "id": "546",
+            "name": "Technology",
+            "urlkey": "technology"
+        },
+        "topics": [
+            {
+                "__typename": "Topic",
+                "id": "150844",
+                "urlkey": "php",
+                "name": "PHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "8192",
+                "urlkey": "open-source",
+                "name": "Open Source"
+            },
+            {
+                "__typename": "Topic",
+                "id": "789",
+                "urlkey": "mysql",
+                "name": "MySQL"
+            },
+            {
+                "__typename": "Topic",
+                "id": "788002",
+                "urlkey": "web-technology",
+                "name": "Web Technology"
+            },
+            {
+                "__typename": "Topic",
+                "id": "15582",
+                "urlkey": "web-development",
+                "name": "Web Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "32528",
+                "urlkey": "computer-programming",
+                "name": "Computer Programming"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23717",
+                "urlkey": "cakephp",
+                "name": "CakePHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23837",
+                "urlkey": "php-application-development",
+                "name": "PHP Application Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "28990",
+                "urlkey": "cms-content-management-systems-",
+                "name": "CMS (Content Management Systems)"
+            },
+            {
+                "__typename": "Topic",
+                "id": "100119",
+                "urlkey": "php-framework",
+                "name": "PHP Framework"
+            },
+            {
+                "__typename": "Topic",
+                "id": "1504127",
+                "urlkey": "symfony",
+                "name": "Symfony"
+            },
+            {
+                "__typename": "Topic",
+                "id": "332201",
+                "urlkey": "php-women",
+                "name": "PHP Women"
+            },
+            {
+                "__typename": "Topic",
+                "id": "422312",
+                "urlkey": "php-cms",
+                "name": "PHP CMS"
+            }
+        ],
+        "urlname": "PHP-Valencia",
+        "country": "es",
+        "state": "",
+        "city": "Valencia",
+        "needsPhoto": false,
+        "proNetwork": null,
+        "featuredEvent": null,
+        "stats": {
+            "__typename": "GroupStats",
+            "memberCounts": {
+                "__typename": "GroupMemberCounts",
+                "all": 906
+            }
+        },
+        "needsQuestions": false,
+        "duesSettings": null,
+        "questions": [],
+        "sponsors": {
+            "__typename": "ProGroupSponsorsConnection",
+            "edges": []
+        },
+        "groupPhoto": {
+            "__typename": "PhotoInfo",
+            "id": "446784988",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/",
+            "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg"
+        },
+        "status": "PAID",
+        "isInCumulativeImpactTreatment": false
+    },
+    "sponsoredUntil": null,
+    "timezone": "Europe/Madrid",
+    "waiting": 0,
+    "timeStatus": "ENDED",
+    "host": {
+        "__typename": "EventHost",
+        "memberId": "131917172",
+        "id": "131917172",
+        "name": "Carlos Reig",
+        "memberPhoto": {
+            "__typename": "PhotoInfo",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+            "id": "241980731"
+        }
+    },
+    "currency": "USD"
+}

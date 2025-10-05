@@ -1,0 +1,230 @@
+{
+    "__typename": "Event",
+    "id": "230066792",
+    "token": "230066792",
+    "title": "Refactoring colaborativo",
+    "description": "\u00a1Hola phper@!\n\n\u00bfAlguna vez te ha pasado estar trabajando en un c\u00f3digo que cada vez se te atraganta m\u00e1s? Ya no es mantenible y cada nuevo cambio te cuesta m\u00e1s tiempo y esfuerzo que el anterior.\n\nCreo que todos hemos experimentado esa sensaci\u00f3n... Y no mola nada.\n\nAfortunadamente, como casi todo en la vida, ese problema tiene una soluci\u00f3n: refactorizar tu c\u00f3digo.\n\nPues bien, en esta ocasi\u00f3n, la reuni\u00f3n de PHP Valencia no va a consistir en una charla como hacemos habitualmente. En lugar de zeso, haremos \u00a1una sesi\u00f3n de refactoring colaborativa!\n\nValentin Rusev (@kolbyfloyd (https://twitter.com/kolbyfloyd)), un conocido miembro de la comunidad, tiene un problema con el c\u00f3digo de un componente de su proyecto: Festop (http://festop.com). El objetivo de la reuni\u00f3n es que analicemos su problema y refactoricemos su c\u00f3digo entre todos.\n\nSi no sabes muy bien en qu\u00e9 consiste un proceso de refactor, te dir\u00e9 que hablaremos de testing, patrones y buenas pr\u00e1cticas. As\u00ed que, \u00a1no pierdas esta oportunidad de aprender!\n\nPor otra parte, la reuni\u00f3n de este mes tendr\u00e1 lugar en las oficinas de Onestic (http://onestic.com/) ( C/ Roger de Lauria 19, 4\u00ba piso, Despacho B), que se ha ofrecido amablemente a acogernos.\n\nY recuerda que, despu\u00e9s de la reuni\u00f3n, algunos nos quedaremos a cenar en alg\u00fan bar de la zona. \u00a1Ap\u00fantate a la cena! que es una ocasi\u00f3n perfecta para conocernos mejor :)\n\n\u00a1Nos vemos el jueves 7 de abril a las 19:00 en las oficinas de Onestic!",
+    "eventUrl": "https://www.meetup.com/php-valencia/events/230066792/",
+    "status": "PAST",
+    "eventType": "PHYSICAL",
+    "featuredEventPhoto": null,
+    "eventHosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        }
+    ],
+    "dateTime": "2016-04-07T19:00:00+02:00",
+    "endTime": "2016-04-07T22:00:00+02:00",
+    "isFeatured": false,
+    "venue": {
+        "__typename": "Venue",
+        "id": "24468889",
+        "name": "Oficinas de Onestic",
+        "address": "C/ Roger de Lauria 19, 4\u00ba piso, Despacho B",
+        "city": "Valencia",
+        "state": "",
+        "country": "es",
+        "lat": 39.469906,
+        "lng": -0.376288
+    },
+    "maxTickets": 50,
+    "series": null,
+    "rsvps": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "waitingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "goingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 23
+    },
+    "waitlistMode": "AUTO",
+    "guestsAllowed": true,
+    "numberOfAllowedGuests": 2,
+    "proCompleteRsvp": null,
+    "topics": {
+        "__typename": "TopicsConnection",
+        "edges": []
+    },
+    "rsvpSettings": {
+        "__typename": "RsvpOpenSettings",
+        "rsvpOpenTime": null,
+        "rsvpCloseTime": null
+    },
+    "covidPrecautions": {
+        "__typename": "CovidPrecautions",
+        "masks": null,
+        "vaccinations": null,
+        "details": null,
+        "venueType": null
+    },
+    "isNetworkEvent": false,
+    "hosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        }
+    ],
+    "feeSettings": null,
+    "networkEvent": null,
+    "speakerDetails": null,
+    "socialProofInsights": null,
+    "group": {
+        "__typename": "Group",
+        "id": "18577011",
+        "name": "PHP Valencia",
+        "isPrivate": false,
+        "timezone": "Europe/Madrid",
+        "link": "https://www.meetup.com/PHP-Valencia",
+        "joinMode": "OPEN",
+        "topicCategory": {
+            "__typename": "TopicCategory",
+            "id": "546",
+            "name": "Technology",
+            "urlkey": "technology"
+        },
+        "topics": [
+            {
+                "__typename": "Topic",
+                "id": "150844",
+                "urlkey": "php",
+                "name": "PHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "8192",
+                "urlkey": "open-source",
+                "name": "Open Source"
+            },
+            {
+                "__typename": "Topic",
+                "id": "789",
+                "urlkey": "mysql",
+                "name": "MySQL"
+            },
+            {
+                "__typename": "Topic",
+                "id": "788002",
+                "urlkey": "web-technology",
+                "name": "Web Technology"
+            },
+            {
+                "__typename": "Topic",
+                "id": "15582",
+                "urlkey": "web-development",
+                "name": "Web Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "32528",
+                "urlkey": "computer-programming",
+                "name": "Computer Programming"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23717",
+                "urlkey": "cakephp",
+                "name": "CakePHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23837",
+                "urlkey": "php-application-development",
+                "name": "PHP Application Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "28990",
+                "urlkey": "cms-content-management-systems-",
+                "name": "CMS (Content Management Systems)"
+            },
+            {
+                "__typename": "Topic",
+                "id": "100119",
+                "urlkey": "php-framework",
+                "name": "PHP Framework"
+            },
+            {
+                "__typename": "Topic",
+                "id": "1504127",
+                "urlkey": "symfony",
+                "name": "Symfony"
+            },
+            {
+                "__typename": "Topic",
+                "id": "332201",
+                "urlkey": "php-women",
+                "name": "PHP Women"
+            },
+            {
+                "__typename": "Topic",
+                "id": "422312",
+                "urlkey": "php-cms",
+                "name": "PHP CMS"
+            }
+        ],
+        "urlname": "PHP-Valencia",
+        "country": "es",
+        "state": "",
+        "city": "Valencia",
+        "needsPhoto": false,
+        "proNetwork": null,
+        "featuredEvent": null,
+        "stats": {
+            "__typename": "GroupStats",
+            "memberCounts": {
+                "__typename": "GroupMemberCounts",
+                "all": 906
+            }
+        },
+        "needsQuestions": false,
+        "duesSettings": null,
+        "questions": [],
+        "sponsors": {
+            "__typename": "ProGroupSponsorsConnection",
+            "edges": []
+        },
+        "groupPhoto": {
+            "__typename": "PhotoInfo",
+            "id": "446784988",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/",
+            "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg"
+        },
+        "status": "PAID",
+        "isInCumulativeImpactTreatment": false
+    },
+    "sponsoredUntil": null,
+    "timezone": "Europe/Madrid",
+    "waiting": 0,
+    "timeStatus": "ENDED",
+    "host": {
+        "__typename": "EventHost",
+        "memberId": "131917172",
+        "id": "131917172",
+        "name": "Carlos Reig",
+        "memberPhoto": {
+            "__typename": "PhotoInfo",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+            "id": "241980731"
+        }
+    },
+    "currency": "USD"
+}

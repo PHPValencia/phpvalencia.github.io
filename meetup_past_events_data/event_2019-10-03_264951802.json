@@ -1,0 +1,230 @@
+{
+    "__typename": "Event",
+    "id": "264951802",
+    "token": "264951802",
+    "title": "When Symfony met Promises",
+    "description": "Septiembre es un mes especial. El final de verano y comienzo del nuevo curso nos hace pensar. Hacemos una valoraci\u00f3n de c\u00f3mo nos va el a\u00f1o y nos prometemos a nosotros mismos cumplir nuestros objetivos. Frases como \"voy a bajar 10Kg\", \"voy a leer m\u00e1s\" o similares, se pasean por nuestra cabeza estos d\u00edas.\n\nPues bien, Symfony no pod\u00eda ser menos. Tambi\u00e9n se hace promesas. Lo que pasa es que un poco distintas que los humanos. Y Marc Morera (http://twitter.com/mmoreram) ha tenido la amabilidad de preparar una charla para contarnos qu\u00e9 clase de promesas se hace Symfony.\n\nEn palabras de Marc: \"In this talk we will discover what a Promise is and what is designed for.\n\nWe will check how we can work with any Promise implementation in the regular Symfony distribution, either from the server perspective and inside our domain.\n\nFinally, we will see how Symfony can easily turn Promises friendly by using ReactPHP, allowing us to work with them in our whole application, improving extremely our service performance.\n\nAll steps will be decorated with benchmarks, examples and deep analysis tips.\"\n\n======================\nImportante: aunque la descripci\u00f3n est\u00e9 en ingl\u00e9s, *la charla ser\u00e1 en espa\u00f1ol*.\n======================\n\nNos vemos el d\u00eda 3 de octubre a las 19:00 en las oficinas de Xing (en el centro de Valencia).\n\nRecuerda que despu\u00e9s de la charla tendremos un ratito de networking. Por \u00faltimo, siempre nos quedamos algunos para cenar por alg\u00fan sitio por la zona. Es un momento perfecto para hablar con gente de la comunidad en un ambiente amigable y m\u00e1s tranquilo.\n\n\u00a1Nos vemos el jueves!",
+    "eventUrl": "https://www.meetup.com/php-valencia/events/264951802/",
+    "status": "PAST",
+    "eventType": "PHYSICAL",
+    "featuredEventPhoto": null,
+    "eventHosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        }
+    ],
+    "dateTime": "2019-10-03T19:00:00+02:00",
+    "endTime": "2019-10-03T21:00:00+02:00",
+    "isFeatured": false,
+    "venue": {
+        "__typename": "Venue",
+        "id": "26636451",
+        "name": "New Work Spain",
+        "address": "C. del Pintor Sorolla, 11",
+        "city": "Val\u00e8ncia",
+        "state": "Va",
+        "country": "es",
+        "lat": 39.471058,
+        "lng": -0.373322
+    },
+    "maxTickets": 0,
+    "series": null,
+    "rsvps": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "waitingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "goingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 36
+    },
+    "waitlistMode": "AUTO",
+    "guestsAllowed": false,
+    "numberOfAllowedGuests": 0,
+    "proCompleteRsvp": null,
+    "topics": {
+        "__typename": "TopicsConnection",
+        "edges": []
+    },
+    "rsvpSettings": {
+        "__typename": "RsvpOpenSettings",
+        "rsvpOpenTime": null,
+        "rsvpCloseTime": null
+    },
+    "covidPrecautions": {
+        "__typename": "CovidPrecautions",
+        "masks": null,
+        "vaccinations": null,
+        "details": null,
+        "venueType": null
+    },
+    "isNetworkEvent": false,
+    "hosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        }
+    ],
+    "feeSettings": null,
+    "networkEvent": null,
+    "speakerDetails": null,
+    "socialProofInsights": null,
+    "group": {
+        "__typename": "Group",
+        "id": "18577011",
+        "name": "PHP Valencia",
+        "isPrivate": false,
+        "timezone": "Europe/Madrid",
+        "link": "https://www.meetup.com/PHP-Valencia",
+        "joinMode": "OPEN",
+        "topicCategory": {
+            "__typename": "TopicCategory",
+            "id": "546",
+            "name": "Technology",
+            "urlkey": "technology"
+        },
+        "topics": [
+            {
+                "__typename": "Topic",
+                "id": "150844",
+                "urlkey": "php",
+                "name": "PHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "8192",
+                "urlkey": "open-source",
+                "name": "Open Source"
+            },
+            {
+                "__typename": "Topic",
+                "id": "789",
+                "urlkey": "mysql",
+                "name": "MySQL"
+            },
+            {
+                "__typename": "Topic",
+                "id": "788002",
+                "urlkey": "web-technology",
+                "name": "Web Technology"
+            },
+            {
+                "__typename": "Topic",
+                "id": "15582",
+                "urlkey": "web-development",
+                "name": "Web Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "32528",
+                "urlkey": "computer-programming",
+                "name": "Computer Programming"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23717",
+                "urlkey": "cakephp",
+                "name": "CakePHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23837",
+                "urlkey": "php-application-development",
+                "name": "PHP Application Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "28990",
+                "urlkey": "cms-content-management-systems-",
+                "name": "CMS (Content Management Systems)"
+            },
+            {
+                "__typename": "Topic",
+                "id": "100119",
+                "urlkey": "php-framework",
+                "name": "PHP Framework"
+            },
+            {
+                "__typename": "Topic",
+                "id": "1504127",
+                "urlkey": "symfony",
+                "name": "Symfony"
+            },
+            {
+                "__typename": "Topic",
+                "id": "332201",
+                "urlkey": "php-women",
+                "name": "PHP Women"
+            },
+            {
+                "__typename": "Topic",
+                "id": "422312",
+                "urlkey": "php-cms",
+                "name": "PHP CMS"
+            }
+        ],
+        "urlname": "PHP-Valencia",
+        "country": "es",
+        "state": "",
+        "city": "Valencia",
+        "needsPhoto": false,
+        "proNetwork": null,
+        "featuredEvent": null,
+        "stats": {
+            "__typename": "GroupStats",
+            "memberCounts": {
+                "__typename": "GroupMemberCounts",
+                "all": 906
+            }
+        },
+        "needsQuestions": false,
+        "duesSettings": null,
+        "questions": [],
+        "sponsors": {
+            "__typename": "ProGroupSponsorsConnection",
+            "edges": []
+        },
+        "groupPhoto": {
+            "__typename": "PhotoInfo",
+            "id": "446784988",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/",
+            "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg"
+        },
+        "status": "PAID",
+        "isInCumulativeImpactTreatment": false
+    },
+    "sponsoredUntil": null,
+    "timezone": "Europe/Madrid",
+    "waiting": 0,
+    "timeStatus": "ENDED",
+    "host": {
+        "__typename": "EventHost",
+        "memberId": "131917172",
+        "id": "131917172",
+        "name": "Carlos Reig",
+        "memberPhoto": {
+            "__typename": "PhotoInfo",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+            "id": "241980731"
+        }
+    },
+    "currency": "USD"
+}

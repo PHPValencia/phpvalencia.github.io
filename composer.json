@@ -6,7 +6,10 @@
         "symfony/finder": "^7.4",
         "symfony/filesystem": "^7.4",
         "blobaugh/meetup-api-client": "*",
-        "josegonzalez/dotenv": "2.1.0"
+        "josegonzalez/dotenv": "2.1.0",
+        "guzzlehttp/guzzle": "8.0.x-dev",
+        "symfony/dom-crawler": "8.0.x-dev",
+        "symfony/css-selector": "8.0.x-dev"
     },
     "autoload": {
         "psr-4": {"Builder\\": "builder/"}

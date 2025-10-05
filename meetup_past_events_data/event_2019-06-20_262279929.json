@@ -1,0 +1,230 @@
+{
+    "__typename": "Event",
+    "id": "262279929",
+    "token": "262279929",
+    "title": "Software libre: licencias y modelos de negocio",
+    "description": "\u00a1Hola!\n\nFormamos parte de una industria en la que es muy normal poder utilizar productos \"de la competencia\" de forma gratuita. No solamente puedes utilizarlos sino que adem\u00e1s puedes ver c\u00f3mo est\u00e1n hechos por dentro o \u00a1Incluso contribuir!\n\nSi alguna vez te has preguntado c\u00f3mo es posible que haya gente \"trabajando gratis\". U otras dudas sobre el mundo de las licencias de software, en esta charla David Hern\u00e1ndez (https://twitter.com/David_Baltha) te abrir\u00e1 los ojos.\n\nEn palabras de David:\n\n\"Tengo un proyecto de software y quiero ponerle una licencia libre pero tambi\u00e9n quiero ganar dinero con \u00e9l. \u00bfEs esto posible?\n\n\u00bfC\u00f3mo nos afecta el copyright o la licencia del software que utilizamos en nuestro trabajo?\n\n\u00bfPuedo utilizar cualquier parte del c\u00f3digo de un software libre dentro de mi propio software?\n\nTodas estas son algunas de las preguntas que nos podemos hacer en nuestro d\u00eda a d\u00eda. En esta charla veremos de donde surgen las licencias de software, los diferentes tipos de licencias que hay o como podemos escoger la licencia adecuada. Ademas veremos diferentes modelos de negocio que podemos utilizar si escogemos una licencia libre.\"\n\nComo sabes, normalmente hacemos los meetups en oficinas de empresas locales. Sin embargo, en esta ocasi\u00f3n vamos a hacer la charla en la Universidad Polit\u00e9cnica de Valencia para atraer nuevos talentos a PHP :) Nos vemos el jueves 20 de junio a las 19:00 en el aula 0.2 (planta baja) del edificio 1G (ETSINF) del polit\u00e9cnico.\n\nComo siempre, **despu\u00e9s de la charla estaremos un rato haciendo networking y luego nos iremos a cenar a alg\u00fan lugar de la zona**.\nSi nunca te has quedado a cenar \u00a1Ap\u00fantate esta vez! Que esa es una de las mejores partes del evento :)\n\n\u00a1Nos vemos el jueves!",
+    "eventUrl": "https://www.meetup.com/php-valencia/events/262279929/",
+    "status": "PAST",
+    "eventType": "PHYSICAL",
+    "featuredEventPhoto": null,
+    "eventHosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        }
+    ],
+    "dateTime": "2019-06-20T19:00:00+02:00",
+    "endTime": "2019-06-20T21:00:00+02:00",
+    "isFeatured": false,
+    "venue": {
+        "__typename": "Venue",
+        "id": "26139213",
+        "name": "UPV - Escola T\u00e8cnica Superior d'Enginyeria Inform\u00e0tica ETSINF",
+        "address": "Cam\u00ed de Vera, s/n",
+        "city": "Val\u00e8ncia",
+        "state": "Va",
+        "country": "es",
+        "lat": 39.482887,
+        "lng": -0.348061
+    },
+    "maxTickets": 0,
+    "series": null,
+    "rsvps": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "waitingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 0
+    },
+    "goingCount": {
+        "__typename": "RsvpConnection",
+        "totalCount": 17
+    },
+    "waitlistMode": "AUTO",
+    "guestsAllowed": false,
+    "numberOfAllowedGuests": 0,
+    "proCompleteRsvp": null,
+    "topics": {
+        "__typename": "TopicsConnection",
+        "edges": []
+    },
+    "rsvpSettings": {
+        "__typename": "RsvpOpenSettings",
+        "rsvpOpenTime": null,
+        "rsvpCloseTime": null
+    },
+    "covidPrecautions": {
+        "__typename": "CovidPrecautions",
+        "masks": null,
+        "vaccinations": null,
+        "details": null,
+        "venueType": null
+    },
+    "isNetworkEvent": false,
+    "hosts": [
+        {
+            "__typename": "EventHost",
+            "memberId": "131917172",
+            "id": "131917172",
+            "name": "Carlos Reig",
+            "memberPhoto": {
+                "__typename": "PhotoInfo",
+                "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+                "id": "241980731"
+            }
+        }
+    ],
+    "feeSettings": null,
+    "networkEvent": null,
+    "speakerDetails": null,
+    "socialProofInsights": null,
+    "group": {
+        "__typename": "Group",
+        "id": "18577011",
+        "name": "PHP Valencia",
+        "isPrivate": false,
+        "timezone": "Europe/Madrid",
+        "link": "https://www.meetup.com/PHP-Valencia",
+        "joinMode": "OPEN",
+        "topicCategory": {
+            "__typename": "TopicCategory",
+            "id": "546",
+            "name": "Technology",
+            "urlkey": "technology"
+        },
+        "topics": [
+            {
+                "__typename": "Topic",
+                "id": "150844",
+                "urlkey": "php",
+                "name": "PHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "8192",
+                "urlkey": "open-source",
+                "name": "Open Source"
+            },
+            {
+                "__typename": "Topic",
+                "id": "789",
+                "urlkey": "mysql",
+                "name": "MySQL"
+            },
+            {
+                "__typename": "Topic",
+                "id": "788002",
+                "urlkey": "web-technology",
+                "name": "Web Technology"
+            },
+            {
+                "__typename": "Topic",
+                "id": "15582",
+                "urlkey": "web-development",
+                "name": "Web Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "32528",
+                "urlkey": "computer-programming",
+                "name": "Computer Programming"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23717",
+                "urlkey": "cakephp",
+                "name": "CakePHP"
+            },
+            {
+                "__typename": "Topic",
+                "id": "23837",
+                "urlkey": "php-application-development",
+                "name": "PHP Application Development"
+            },
+            {
+                "__typename": "Topic",
+                "id": "28990",
+                "urlkey": "cms-content-management-systems-",
+                "name": "CMS (Content Management Systems)"
+            },
+            {
+                "__typename": "Topic",
+                "id": "100119",
+                "urlkey": "php-framework",
+                "name": "PHP Framework"
+            },
+            {
+                "__typename": "Topic",
+                "id": "1504127",
+                "urlkey": "symfony",
+                "name": "Symfony"
+            },
+            {
+                "__typename": "Topic",
+                "id": "332201",
+                "urlkey": "php-women",
+                "name": "PHP Women"
+            },
+            {
+                "__typename": "Topic",
+                "id": "422312",
+                "urlkey": "php-cms",
+                "name": "PHP CMS"
+            }
+        ],
+        "urlname": "PHP-Valencia",
+        "country": "es",
+        "state": "",
+        "city": "Valencia",
+        "needsPhoto": false,
+        "proNetwork": null,
+        "featuredEvent": null,
+        "stats": {
+            "__typename": "GroupStats",
+            "memberCounts": {
+                "__typename": "GroupMemberCounts",
+                "all": 906
+            }
+        },
+        "needsQuestions": false,
+        "duesSettings": null,
+        "questions": [],
+        "sponsors": {
+            "__typename": "ProGroupSponsorsConnection",
+            "edges": []
+        },
+        "groupPhoto": {
+            "__typename": "PhotoInfo",
+            "id": "446784988",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/",
+            "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg"
+        },
+        "status": "PAID",
+        "isInCumulativeImpactTreatment": false
+    },
+    "sponsoredUntil": null,
+    "timezone": "Europe/Madrid",
+    "waiting": 0,
+    "timeStatus": "ENDED",
+    "host": {
+        "__typename": "EventHost",
+        "memberId": "131917172",
+        "id": "131917172",
+        "name": "Carlos Reig",
+        "memberPhoto": {
+            "__typename": "PhotoInfo",
+            "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
+            "id": "241980731"
+        }
+    },
+    "currency": "USD"
+}
