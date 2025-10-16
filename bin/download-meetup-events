@@ -6,40 +6,22 @@ require __DIR__ . '/../vendor/autoload.php';
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-$events = [
-    "307339901",
-    "288082613",
-    "264951802",
-    "262279929",
-    "259034739",
-    "257952740",
-    "255792881",
-    "247161521",
-    "246232358",
-    "244506762",
-    "241109140",
-    "240091104",
-    "237938008",
-    "235874927",
-    "235077516",
-    "234595605",
-    "234065021",
-    "233907346",
-    "233380884",
-    "232965075",
-    "231508929",
-    "230765736",
-    "230066792",
-    "229100210",
-    "228523235",
-    "227913781",
-    "227111529",
-    "225509700",
-    "224555680",
-    "223648955",
-    "222811429",
-    "222316539",
-];
+function load_event_ids(string $filePath): array
+{
+    $json = file_get_contents($filePath);
+
+    if ($json === false) {
+        throw new RuntimeException("Failed to read events file: {$filePath}");
+    }
+
+    $data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
+
+    if (!is_array($data)) {
+        throw new RuntimeException('Events file did not decode to an array.');
+    }
+
+    return $data;
+}
 
 function fetch_url(string $url): string
 {
@@ -113,6 +95,8 @@ function download_meetup_events(array $events, string $targetDir): void
         sleep(1);
     }
 }
+
+$events = load_event_ids(__DIR__ . '/../meetup_events.json');
 
 download_meetup_events(
     $events,
