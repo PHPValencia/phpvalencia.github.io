@@ -1,2 +1,60 @@
-# website
-Página web principal de PHP Valencia
+# PHPValencia Website
+
+Página web principal de PHP Valencia.
+
+## Deploy
+
+La publicación en GitHub Pages se automatiza mediante el workflow `.github/workflows/static.yml`:
+
+No es necesario subir los ficheros compilados al repositorio; basta con que el código fuente esté actualizado para que el despliegue se genere automáticamente.
+
+
+## Uso en local
+
+Comandos básicos para operar el website con [Jigsaw](https://jigsaw.tighten.com/):
+
+```bash
+# Modo local (salida en build_local/)
+vendor/bin/jigsaw build
+
+# Modo producción (salida en build_production/)
+vendor/bin/jigsaw build production
+
+# Servir el sitio en modo local (usa PHP built-in server)
+vendor/bin/jigsaw serve
+```
+
+El comando `serve` recompila automáticamente cuando cambian los ficheros dentro de `source/`.
+
+
+## CLI
+
+Comandos útiles disponibles `bin/cli`.
+
+
+### Requisitos
+
+- PHP 8.1 o superior
+- Dependencias instaladas: `composer install`
+
+
+### Descargar eventos de Meetup
+
+Descarga los datos JSON de los identificadores de eventos y guarda cada respuesta en un fichero:
+
+```bash
+bin/cli meetup:download-events \
+  --events-file meetup_events.json \
+  --output-dir meetup_events_data
+```
+
+
+### Generar archivos Markdown
+
+Convierte los ficheros JSON descargados en entradas Markdown para la web:
+
+```bash
+bin/cli meetup:generate-markdown \
+  --input-dir meetup_events_data \
+  --output-dir source/_events
+```
