@@ -94,19 +94,27 @@ function normalize_event_date(string $dateTime): string
 }
 
 
-foreach($events as $id) {
+function download_meetup_events(array $events, string $targetDir): void
+{
+    $normalizedTargetDir = rtrim($targetDir, DIRECTORY_SEPARATOR);
 
-    try {
-        $url = "https://www.meetup.com/php-valencia/events/{$id}/";
-        $html = fetch_url($url);
-        $data = extract_event_data_json($html);
-        $eventDate = normalize_event_date($data["dateTime"]);
-        $targetFile = __DIR__ . "/../meetup_events_data/event_{$eventDate}_{$id}.json";
-        save_json($data, $targetFile);
-    } catch (Throwable $e) {
-        echo "Error: " . $e->getMessage() . "\n";
+    foreach ($events as $id) {
+        try {
+            $url = "https://www.meetup.com/php-valencia/events/{$id}/";
+            $html = fetch_url($url);
+            $data = extract_event_data_json($html);
+            $eventDate = normalize_event_date($data["dateTime"]);
+            $targetFile = $normalizedTargetDir . "/event_{$eventDate}_{$id}.json";
+            save_json($data, $targetFile);
+        } catch (Throwable $e) {
+            echo "Error: " . $e->getMessage() . "\n";
+        }
+
+        sleep(1);
     }
-
-    
-    sleep(1);
 }
+
+download_meetup_events(
+    $events,
+    __DIR__ . '/../meetup_events_data'
+);

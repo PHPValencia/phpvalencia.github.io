@@ -40,18 +40,28 @@ section: content
     return $content;
 }
 
-$files = glob(__DIR__ . "/../meetup_events_data/*.json");
+function generate_event_markdown_files(string $inputDir, string $outputDir): void
+{
+    $normalizedInputDir = rtrim($inputDir, DIRECTORY_SEPARATOR);
+    $normalizedOutputDir = rtrim($outputDir, DIRECTORY_SEPARATOR);
+    $files = glob($normalizedInputDir . '/*.json');
 
-foreach ($files as $file) {
-    echo "Processing $file...\n";
+    foreach ($files as $file) {
+        echo "Processing $file...\n";
 
-    $data = json_decode(file_get_contents($file), true);
-    $markdown = convert_event_to_markdown($data);
-    $eventDate = normalize_event_date($data["dateTime"]);
-    $outputFile = __DIR__ . "/../source/_events/{$eventDate}_{$data['id']}.md";
-    file_put_contents($outputFile, $markdown);
+        $data = json_decode(file_get_contents($file), true);
+        $markdown = convert_event_to_markdown($data);
+        $eventDate = normalize_event_date($data["dateTime"]);
+        $outputFile = $normalizedOutputDir . "/{$eventDate}_{$data['id']}.md";
+        file_put_contents($outputFile, $markdown);
 
-    echo "Created $outputFile\n";
+        echo "Created $outputFile\n";
+    }
+
+    echo "All done.\n";
 }
 
-echo "All done.\n";
+generate_event_markdown_files(
+    __DIR__ . '/../meetup_events_data',
+    __DIR__ . '/../source/_events'
+);
