@@ -1,4 +1,6 @@
 /build_local/
+/build_production/
+/build_prod/
 /node_modules/
 /vendor/
 .idea
