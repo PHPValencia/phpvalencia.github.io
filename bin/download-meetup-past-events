@@ -101,7 +101,7 @@ foreach($events as $id) {
         $html = fetch_url($url);
         $data = extract_event_data_json($html);
         $eventDate = normalize_event_date($data["dateTime"]);
-        $targetFile = __DIR__ . "/../meetup_past_events_data/event_{$eventDate}_{$id}.json";        
+        $targetFile = __DIR__ . "/../meetup_events_data/event_{$eventDate}_{$id}.json";
         save_json($data, $targetFile);
     } catch (Throwable $e) {
         echo "Error: " . $e->getMessage() . "\n";

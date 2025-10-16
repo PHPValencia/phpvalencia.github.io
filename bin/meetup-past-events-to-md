@@ -40,7 +40,7 @@ section: content
     return $content;
 }
 
-$files = glob(__DIR__ . "/../meetup_past_events_data/*.json");
+$files = glob(__DIR__ . "/../meetup_events_data/*.json");
 
 foreach ($files as $file) {
     echo "Processing $file...\n";
