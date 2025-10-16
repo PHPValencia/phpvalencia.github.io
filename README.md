@@ -2,13 +2,21 @@
 
 Página web principal de PHP Valencia.
 
-## Utilidades CLI
 
-Todos los comandos de automatización del proyecto están disponibles a través de la aplicación Symfony Console situada en `bin/cli`.
+## CLI
+
+Comandos útiles disponibles `bin/cli`.
+
+
+### Requisitos
+
+- PHP 8.1 o superior
+- Dependencias instaladas: `composer install`
+
 
 ### Descargar eventos de Meetup
 
-Descarga los datos JSON de los identificadores de eventos configurados y los guarda en un directorio:
+Descarga los datos JSON de los identificadores de eventos y guarda cada respuesta en un fichero:
 
 ```bash
 bin/cli meetup:download-events \
@@ -16,8 +24,6 @@ bin/cli meetup:download-events \
   --output-dir meetup_events_data
 ```
 
-- `--events-file` debe apuntar a un array JSON con los identificadores de eventos de Meetup que se quieren descargar.
-- `--output-dir` es la carpeta donde se almacenarán los ficheros JSON (se creará si no existe).
 
 ### Generar archivos Markdown
 
@@ -28,6 +34,3 @@ bin/cli meetup:generate-markdown \
   --input-dir meetup_events_data \
   --output-dir source/_events
 ```
-
-- `--input-dir` debe señalar al directorio que contiene los ficheros JSON de los eventos.
-- `--output-dir` es el directorio donde se generarán los ficheros Markdown.
