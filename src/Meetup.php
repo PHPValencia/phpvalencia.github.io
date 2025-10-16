@@ -158,6 +158,7 @@ section: content
 
             $data = self::load_event_file($file);
             $markdown = self::convert_event_to_markdown($data);
+            $markdown = rtrim($markdown, "\n") . "\n";
             $eventDate = self::normalize_event_date($data["dateTime"]);
             $outputFile = $normalizedOutputDir . "/{$eventDate}_{$data['id']}.md";
             file_put_contents($outputFile, $markdown);

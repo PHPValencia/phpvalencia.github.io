@@ -1,9 +1,0 @@
-#!/usr/bin/env php
-<?php
-
-require __DIR__ . '/../vendor/autoload.php';
-
-\PHPValencia\Meetup::generate_event_markdown_files(
-    __DIR__ . '/../meetup_events_data',
-    __DIR__ . '/../source/_events'
-);
