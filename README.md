@@ -2,6 +2,30 @@
 
 Página web principal de PHP Valencia.
 
+## Deploy
+
+La publicación en GitHub Pages se automatiza mediante el workflow `.github/workflows/static.yml`:
+
+No es necesario subir los ficheros compilados al repositorio; basta con que el código fuente esté actualizado para que el despliegue se genere automáticamente.
+
+
+## Uso en local
+
+Comandos básicos para operar el website con [Jigsaw](https://jigsaw.tighten.com/):
+
+```bash
+# Modo local (salida en build_local/)
+vendor/bin/jigsaw build
+
+# Modo producción (salida en build_production/)
+vendor/bin/jigsaw build production
+
+# Servir el sitio en modo local (usa PHP built-in server)
+vendor/bin/jigsaw serve
+```
+
+El comando `serve` recompila automáticamente cuando cambian los ficheros dentro de `source/`.
+
 
 ## CLI
 
@@ -34,21 +58,3 @@ bin/cli meetup:generate-markdown \
   --input-dir meetup_events_data \
   --output-dir source/_events
 ```
-
-
-## Uso en local
-
-Comandos básicos para operar el website con [Jigsaw](https://jigsaw.tighten.com/):
-
-```bash
-# Construir el sitio en modo local (salida en build_local/)
-vendor/bin/jigsaw build
-
-# Construir el sitio en modo producción (salida en build_production/)
-vendor/bin/jigsaw build production
-
-# Servir el sitio en modo local (usa PHP built-in server)
-vendor/bin/jigsaw serve
-```
-
-El comando `serve` recompila automáticamente cuando cambian los ficheros dentro de `source/`.
