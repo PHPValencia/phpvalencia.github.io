@@ -2,9 +2,8 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/Meetup.php';
 
-Meetup::generate_event_markdown_files(
+\PHPValencia\Meetup::generate_event_markdown_files(
     __DIR__ . '/../meetup_events_data',
     __DIR__ . '/../source/_events'
 );

@@ -2,11 +2,10 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/Meetup.php';
 
-$events = Meetup::load_event_ids(__DIR__ . '/../meetup_events.json');
+$events = \PHPValencia\Meetup::load_event_ids(__DIR__ . '/../meetup_events.json');
 
-Meetup::download_meetup_events(
+\PHPValencia\Meetup::download_meetup_events(
     $events,
     __DIR__ . '/../meetup_events_data'
 );

@@ -1,7 +1,12 @@
 <?php
 
+namespace PHPValencia;
+
+use DateTime;
 use GuzzleHttp\Client;
+use RuntimeException;
 use Symfony\Component\DomCrawler\Crawler;
+use Throwable;
 
 class Meetup
 {
@@ -120,9 +125,26 @@ section: content
 ---
 
 %s
-', $title, $date, $start, $address, $meetup, $description);
+    ', $title, $date, $start, $address, $meetup, $description);
 
         return $content;
+    }
+
+    public static function load_event_file(string $filePath): array
+    {
+        $json = file_get_contents($filePath);
+
+        if ($json === false) {
+            throw new RuntimeException("Failed to read event file: {$filePath}");
+        }
+
+        $data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
+
+        if (!is_array($data)) {
+            throw new RuntimeException('Event file did not decode to an array.');
+        }
+
+        return $data;
     }
 
     public static function generate_event_markdown_files(string $inputDir, string $outputDir): void
@@ -134,7 +156,7 @@ section: content
         foreach ($files as $file) {
             echo "Processing $file...\n";
 
-            $data = json_decode(file_get_contents($file), true);
+            $data = self::load_event_file($file);
             $markdown = self::convert_event_to_markdown($data);
             $eventDate = self::normalize_event_date($data["dateTime"]);
             $outputFile = $normalizedOutputDir . "/{$eventDate}_{$data['id']}.md";
