@@ -60,7 +60,13 @@ final class DownloadMeetupEventsCommand extends Command
             $events = Meetup::load_event_ids($eventsFile);
             $io->section(sprintf('Downloading %d events into %s', count($events), $outputDir));
 
-            Meetup::download_meetup_events($events, $outputDir);
+            Meetup::download_meetup_events(
+                $events,
+                $outputDir,
+                static function (string $message) use ($io): void {
+                    $io->writeln($message);
+                }
+            );
 
             $io->success('Event download completed.');
             return Command::SUCCESS;

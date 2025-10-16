@@ -69,8 +69,6 @@ class Meetup
         if (file_put_contents($filePath, $encoded) === false) {
             throw new RuntimeException("Failed to write file: $filePath");
         }
-
-        echo "JSON saved to: $filePath\n";
     }
 
     public static function normalize_event_date(string $dateTime): string
@@ -79,7 +77,7 @@ class Meetup
         return $dt->format('Y-m-d');
     }
 
-    public static function download_meetup_events(array $events, string $targetDir): void
+    public static function download_meetup_events(array $events, string $targetDir, ?callable $logger = null): void
     {
         $normalizedTargetDir = rtrim($targetDir, DIRECTORY_SEPARATOR);
 
@@ -91,12 +89,14 @@ class Meetup
                 $eventDate = self::normalize_event_date($data["dateTime"]);
                 $targetFile = $normalizedTargetDir . "/event_{$eventDate}_{$id}.json";
                 self::save_json($data, $targetFile);
+                self::log($logger, "JSON saved to: {$targetFile}");
             } catch (Throwable $e) {
-                echo "Error: " . $e->getMessage() . "\n";
+                self::log($logger, "Error: " . $e->getMessage());
             }
 
             sleep(1);
         }
+        self::log($logger, 'All done.');
     }
 
     public static function event_address(array $venue): string
@@ -147,14 +147,14 @@ section: content
         return $data;
     }
 
-    public static function generate_event_markdown_files(string $inputDir, string $outputDir): void
+    public static function generate_event_markdown_files(string $inputDir, string $outputDir, ?callable $logger = null): void
     {
         $normalizedInputDir = rtrim($inputDir, DIRECTORY_SEPARATOR);
         $normalizedOutputDir = rtrim($outputDir, DIRECTORY_SEPARATOR);
         $files = glob($normalizedInputDir . '/*.json');
 
         foreach ($files as $file) {
-            echo "Processing $file...\n";
+            self::log($logger, "Processing {$file}...");
 
             $data = self::load_event_file($file);
             $markdown = self::convert_event_to_markdown($data);
@@ -163,9 +163,16 @@ section: content
             $outputFile = $normalizedOutputDir . "/{$eventDate}_{$data['id']}.md";
             file_put_contents($outputFile, $markdown);
 
-            echo "Created $outputFile\n";
+            self::log($logger, "Created {$outputFile}");
         }
 
-        echo "All done.\n";
+        self::log($logger, 'All done.');
+    }
+
+    private static function log(?callable $logger, string $message): void
+    {
+        if ($logger !== null) {
+            $logger($message);
+        }
     }
 }

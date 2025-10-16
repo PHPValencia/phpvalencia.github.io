@@ -59,7 +59,13 @@ final class GenerateMeetupMarkdownCommand extends Command
         try {
             $io->section(sprintf('Generating Markdown files from %s into %s', $inputDir, $outputDir));
 
-            Meetup::generate_event_markdown_files($inputDir, $outputDir);
+            Meetup::generate_event_markdown_files(
+                $inputDir,
+                $outputDir,
+                static function (string $message) use ($io): void {
+                    $io->writeln($message);
+                }
+            );
 
             $io->success('Markdown generation completed.');
             return Command::SUCCESS;
