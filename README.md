@@ -34,3 +34,21 @@ bin/cli meetup:generate-markdown \
   --input-dir meetup_events_data \
   --output-dir source/_events
 ```
+
+
+## Uso en local
+
+Comandos básicos para operar el website con [Jigsaw](https://jigsaw.tighten.com/):
+
+```bash
+# Construir el sitio en modo local (salida en build_local/)
+vendor/bin/jigsaw build
+
+# Construir el sitio en modo producción (salida en build_production/)
+vendor/bin/jigsaw build production
+
+# Servir el sitio en modo local (usa PHP built-in server)
+vendor/bin/jigsaw serve
+```
+
+El comando `serve` recompila automáticamente cuando cambian los ficheros dentro de `source/`.
