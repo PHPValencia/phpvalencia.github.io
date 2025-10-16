@@ -125,7 +125,7 @@ section: content
 ---
 
 %s
-    ', $title, $date, $start, $address, $meetup, $description);
+', $title, $date, $start, $address, $meetup, $description);
 
         return $content;
     }
