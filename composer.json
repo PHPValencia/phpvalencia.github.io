@@ -3,18 +3,26 @@
     "description": "This is the PHPValencia's website",
     "require": {
         "tightenco/jigsaw": "^1.8",
-        "symfony/finder": "^7.4",
-        "symfony/filesystem": "^7.4",
-        "guzzlehttp/guzzle": "8.0.x-dev",
-        "symfony/dom-crawler": "8.0.x-dev",
-        "symfony/css-selector": "8.0.x-dev",
-        "nesbot/carbon": "^3.0@dev"
+        "symfony/finder": "^7.0",
+        "symfony/filesystem": "^7.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "symfony/dom-crawler": "^7.0",
+        "symfony/css-selector": "^7.0",
+        "nesbot/carbon": "^3.0"
     },
-    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "PHPValencia\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Carlos Reig Matut",
             "email": "unstatu@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^12.0"
+    }
 }
