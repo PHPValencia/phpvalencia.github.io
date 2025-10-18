@@ -9,6 +9,9 @@ return [
     'collections' => [
         'events' => [
             'sort' => '-date',
+        ],
+        'news' => [
+            'sort' => '-date',
         ]
     ],
     'formattedDate' => function ($page, $date) {
@@ -22,6 +25,10 @@ return [
         [
             'title' => 'Eventos',
             'url' => '/events'
+        ],
+        [
+            'title' => 'Boletín mensual',
+            'url' => '/boletin-mensual'
         ],
         [
             'title' => 'Aloja el evento',

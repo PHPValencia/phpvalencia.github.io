@@ -7,10 +7,12 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use PHPValencia\Cli\DownloadMeetupEventsCommand;
 use PHPValencia\Cli\GenerateMeetupMarkdownCommand;
+use PHPValencia\Cli\GenerateNewsMarkdownCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application('PHPValencia Toolkit');
 $application->add(new DownloadMeetupEventsCommand());
 $application->add(new GenerateMeetupMarkdownCommand());
+$application->add(new GenerateNewsMarkdownCommand());
 
 exit($application->run());

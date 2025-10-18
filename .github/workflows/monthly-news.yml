@@ -1,0 +1,80 @@
+name: Monthly PHP News
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 28-31 * *'
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine last day of month
+        id: schedule
+        run: |
+          today_utc="$(date -u +%Y-%m-%d)"
+          today_day="$(date -u +%d)"
+          last_day="$(date -u -d \"$(date -u +%Y-%m-01) +1 month -1 day\" +%d)"
+          echo "today=${today_utc}" >> "${GITHUB_OUTPUT}"
+          if [ "${today_day}" = "${last_day}" ]; then
+            echo "run=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "run=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Abort if not last day
+        if: steps.schedule.outputs.run != 'true'
+        run: |
+          echo "Hoy (${steps.schedule.outputs.today}) no es el último día del mes. No se genera boletín."
+          exit 0
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Generate boletín
+        run: php bin/cli news:generate-monthly
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "${GITHUB_OUTPUT}"
+          else
+            echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Compute metadata
+        if: steps.changes.outputs.has_changes == 'true'
+        id: meta
+        run: |
+          YEAR_MONTH="$(date -u +%Y-%m)"
+          echo "branch=news/boletin-${YEAR_MONTH}" >> "${GITHUB_OUTPUT}"
+          echo "label=${YEAR_MONTH}" >> "${GITHUB_OUTPUT}"
+
+      - name: Create draft pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(news): añadir boletín mensual ${{ steps.meta.outputs.label }}"
+          branch: ${{ steps.meta.outputs.branch }}
+          title: "Boletín mensual ${{ steps.meta.outputs.label }}"
+          body: |
+            ## Resumen
+
+            - Boletín mensual generado automáticamente desde PHP Weekly.
+            - Confirma los enlaces y completa cualquier ajuste editorial antes de publicar.
+          draft: true
+          add-paths: |
+            source/_news/**
+          delete-branch: true
