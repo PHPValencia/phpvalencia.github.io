@@ -3,7 +3,7 @@ name: Monthly PHP News
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 5 28-31 * *'
+    - cron: '0 5 27 * *'
 
 jobs:
   generate-news:
@@ -13,27 +13,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Determine last day of month
-        id: schedule
-        run: |
-          today_utc="$(date -u +%Y-%m-%d)"
-          today_day="$(date -u +%d)"
-          last_day="$(date -u -d \"$(date -u +%Y-%m-01) +1 month -1 day\" +%d)"
-          echo "today=${today_utc}" >> "${GITHUB_OUTPUT}"
-          if [ "${today_day}" = "${last_day}" ]; then
-            echo "run=true" >> "${GITHUB_OUTPUT}"
-          else
-            echo "run=false" >> "${GITHUB_OUTPUT}"
-          fi
-
-      - name: Abort if not last day
-        if: steps.schedule.outputs.run != 'true'
-        env:
-          TODAY: ${{ steps.schedule.outputs.today }}
-        run: |
-          echo "Hoy (${TODAY}) no es el último día del mes. No se genera boletín."
-          exit 0
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2

@@ -66,10 +66,11 @@ El boletín mensual se construye recopilando todas las ediciones del archivo de 
 ```bash
 bin/cli news:generate-monthly \
   --output-dir source/_news \
-  --archive-url https://www.phpweekly.com/archive.html
+  --archive-url https://www.phpweekly.com/archive.html \
+  --month 2025-10
 ```
 
-Puedes ajustar `--archive-url` si necesitas apuntar a otra página de archivo o a un mirror temporal.
+El parámetro `--month` es opcional (por defecto usa el mes actual en UTC) y permite regenerar meses anteriores. Ajusta `--archive-url` si necesitas apuntar a otra página de archivo o a un mirror temporal.
 
 ## Automatización del boletín
 

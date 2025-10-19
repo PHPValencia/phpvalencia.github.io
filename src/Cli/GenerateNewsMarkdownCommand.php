@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PHPValencia\Cli;
 
+use Carbon\CarbonImmutable;
 use GuzzleHttp\Client;
 use PHPValencia\PhpWeeklyNews;
 use Symfony\Component\Console\Command\Command;
@@ -39,6 +40,12 @@ final class GenerateNewsMarkdownCommand extends Command
                 InputOption::VALUE_REQUIRED,
                 'URL del archivo de PHP Weekly desde el que se extraerán las publicaciones del mes.',
                 'https://www.phpweekly.com/archive.html'
+            )
+            ->addOption(
+                'month',
+                'm',
+                InputOption::VALUE_REQUIRED,
+                'Mes a procesar en formato YYYY-MM (por defecto el mes actual en UTC).'
             );
     }
 
@@ -47,6 +54,7 @@ final class GenerateNewsMarkdownCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $outputDir = (string) $input->getOption('output-dir');
         $archiveUrl = (string) $input->getOption('archive-url');
+        $monthOption = (string) $input->getOption('month');
 
         if ($outputDir === '') {
             $io->error('Debes indicar un directorio de salida mediante --output-dir.');
@@ -56,6 +64,26 @@ final class GenerateNewsMarkdownCommand extends Command
         if ($archiveUrl === '') {
             $io->error('Debes indicar la URL del archivo mediante --archive-url.');
             return Command::INVALID;
+        }
+
+        $referenceMonth = null;
+
+        if ($monthOption !== '') {
+            $monthOption = trim($monthOption);
+
+            if (!preg_match('/^\d{4}-\d{2}$/', $monthOption)) {
+                $io->error('El parámetro --month debe tener formato YYYY-MM (por ejemplo 2025-10).');
+                return Command::INVALID;
+            }
+
+            $parsed = CarbonImmutable::createFromFormat('Y-m', $monthOption, 'UTC');
+
+            if ($parsed === false) {
+                $io->error('No se pudo interpretar el mes proporcionado.');
+                return Command::INVALID;
+            }
+
+            $referenceMonth = $parsed->startOfMonth();
         }
 
         try {
@@ -71,6 +99,7 @@ final class GenerateNewsMarkdownCommand extends Command
                 $archiveUrl,
                 $outputDir,
                 $client,
+                $referenceMonth,
                 static function (string $message) use ($io): void {
                     $io->writeln($message);
                 }

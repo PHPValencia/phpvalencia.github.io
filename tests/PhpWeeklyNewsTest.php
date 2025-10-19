@@ -9,6 +9,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use PHPValencia\PhpWeeklyNews;
+use Symfony\Component\DomCrawler\Crawler;
 
 final class PhpWeeklyNewsTest extends TestCase
 {
@@ -104,6 +105,7 @@ final class PhpWeeklyNewsTest extends TestCase
             'https://www.phpweekly.com/archive.html',
             $outputDir,
             $client,
+            new CarbonImmutable('2025-10-01'),
             null
         );
 
@@ -113,5 +115,134 @@ final class PhpWeeklyNewsTest extends TestCase
 
         array_map('unlink', (array) glob($outputDir . '/*'));
         rmdir($outputDir);
+    }
+
+    public function testExtractMonthIssueLinksFiltersByMonthAndResolvesUrls(): void
+    {
+        $issues = PhpWeeklyNews::extract_month_issue_links(
+            $this->archiveFixture,
+            'https://www.phpweekly.com/archive.html',
+            new CarbonImmutable('2025-10-01')
+        );
+
+        $this->assertCount(1, $issues);
+        $this->assertSame('2025-10-17', $issues[0]['date']->format('Y-m-d'));
+        $this->assertSame('https://www.phpweekly.com/archive/2025-10-17.html', $issues[0]['url']);
+    }
+
+    public function testParseSectionEntriesExtractsLinksWithinParagraphs(): void
+    {
+        $crawler = new Crawler($this->fixture);
+        $node = $crawler->filter('td.bodyContent')->first()->getNode(0);
+        $this->assertInstanceOf(\DOMElement::class, $node);
+
+        $entries = PhpWeeklyNews::parse_section_entries($node);
+        $this->assertNotEmpty($entries);
+        $this->assertSame('First article title', $entries[0]['title']);
+    }
+
+    public function testParseSectionSiblingsDetectsLinksOutsideParagraphs(): void
+    {
+        $html = <<<HTML
+        <td class="bodyContent">
+            <h2><span style="font-size:20px">Custom</span></h2>
+            <a href="https://example.com/one">First</a> Description one.
+            <br>
+            <a href="https://example.com/two">Second</a> Description two.
+        </td>
+        HTML;
+
+        $dom = new \DOMDocument();
+        libxml_use_internal_errors(true);
+        $dom->loadHTML('<table><tr>' . $html . '</tr></table>');
+        libxml_clear_errors();
+        $node = $dom->getElementsByTagName('td')->item(0);
+        $this->assertInstanceOf(\DOMElement::class, $node);
+
+        $entries = PhpWeeklyNews::parse_section_siblings($node);
+        $this->assertCount(2, $entries);
+        $this->assertSame('https://example.com/two', $entries[1]['url']);
+    }
+
+    public function testNormalizeTextTrimsAndDecodesEntities(): void
+    {
+        $dom = new \DOMDocument();
+        $dom->loadHTML('<div>Texto&nbsp;limpio</div>');
+        $node = $dom->getElementsByTagName('div')->item(0)->firstChild;
+        $this->assertSame('Texto limpio', PhpWeeklyNews::normalize_text($node));
+    }
+
+    public function testNormalizeWhitespaceReplacesNonBreakingSpaces(): void
+    {
+        $this->assertSame('Texto limpio', PhpWeeklyNews::normalize_whitespace(" Texto\u{A0}limpio "));
+    }
+
+    public function testSummarizeEnglishDescriptionAddsPrefixAndEllipsis(): void
+    {
+        $text = str_repeat('Word ', 50);
+        $summary = PhpWeeklyNews::summarize_english_description($text);
+
+        $this->assertStringStartsWith('Resumen (inglés):', $summary);
+        $this->assertStringEndsWith('…', $summary);
+    }
+
+    public function testFormatMonthYearReturnsSpanishMonth(): void
+    {
+        $label = PhpWeeklyNews::format_month_year(new CarbonImmutable('2025-02-10'));
+        $this->assertSame('Febrero 2025', $label);
+    }
+
+    public function testEnsureTrailingNewlineAppendsWhenMissing(): void
+    {
+        $result = PhpWeeklyNews::ensure_trailing_newline("linea");
+        $this->assertSame("linea\n", $result);
+    }
+
+    public function testResolveUrlBuildsAbsolutePaths(): void
+    {
+        $resolved = PhpWeeklyNews::resolve_url('https://www.phpweekly.com/archive.html', '/archive/test.html');
+        $this->assertSame('https://www.phpweekly.com/archive/test.html', $resolved);
+    }
+
+    public function testExtractBaseUrlReturnsSchemeHostAndPort(): void
+    {
+        $base = PhpWeeklyNews::extract_base_url('https://www.phpweekly.com:443/archive.html');
+        $this->assertSame('https://www.phpweekly.com:443', $base);
+    }
+
+    public function testEnsureDirectoryCreatesMissingFolders(): void
+    {
+        $dir = sys_get_temp_dir() . '/news-dir-' . uniqid();
+        $this->assertDirectoryDoesNotExist($dir);
+        PhpWeeklyNews::ensure_directory($dir);
+        $this->assertDirectoryExists($dir);
+        rmdir($dir);
+    }
+
+    public function testBuildTargetPathUsesPublicationMonth(): void
+    {
+        $path = PhpWeeklyNews::build_target_path('/tmp/news', new CarbonImmutable('2025-10-31'));
+        $this->assertSame('/tmp/news/2025-10-boletin-mensual.md', $path);
+    }
+
+    public function testFetchIssueReturnsResponseBody(): void
+    {
+        $mockHandler = new MockHandler([
+            new Response(200, [], 'HTML-CONTENT'),
+        ]);
+        $client = new Client(['handler' => HandlerStack::create($mockHandler)]);
+
+        $body = PhpWeeklyNews::fetch_issue($client, 'https://example.com/issue.html');
+        $this->assertSame('HTML-CONTENT', $body);
+    }
+
+    public function testLogWritesMessagesWhenLoggerProvided(): void
+    {
+        $messages = [];
+        PhpWeeklyNews::log(static function (string $message) use (&$messages): void {
+            $messages[] = $message;
+        }, 'Mensaje de prueba');
+
+        $this->assertSame(['Mensaje de prueba'], $messages);
     }
 }

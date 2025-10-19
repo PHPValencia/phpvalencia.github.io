@@ -38,12 +38,13 @@ final class PhpWeeklyNews
         string $archiveUrl,
         string $outputDir,
         Client $client,
+        ?CarbonImmutable $referenceMonth = null,
         ?callable $logger = null
     ): ?string {
         self::log($logger, sprintf('Descargando índice del archivo de PHP Weekly: %s', $archiveUrl));
 
         $archiveHtml = self::fetch_issue($client, $archiveUrl);
-        $referenceDate = CarbonImmutable::now('UTC');
+        $referenceDate = ($referenceMonth ?? CarbonImmutable::now('UTC'))->startOfMonth();
         $issues = self::extract_month_issue_links($archiveHtml, $archiveUrl, $referenceDate);
 
         if ($issues === []) {
@@ -213,7 +214,7 @@ final class PhpWeeklyNews
     /**
      * @return list<array{date: CarbonImmutable, url: string}>
      */
-    private static function extract_month_issue_links(
+    public static function extract_month_issue_links(
         string $archiveHtml,
         string $archiveUrl,
         CarbonImmutable $referenceDate
@@ -280,7 +281,7 @@ final class PhpWeeklyNews
         return $issues;
     }
 
-    private static function parse_section_entries(\DOMElement $sectionNode): array
+    public static function parse_section_entries(\DOMElement $sectionNode): array
     {
         $entries = [];
         $paragraphs = $sectionNode->getElementsByTagName('p');
@@ -318,7 +319,7 @@ final class PhpWeeklyNews
         return $entries !== [] ? $entries : self::parse_section_siblings($sectionNode);
     }
 
-    private static function parse_section_siblings(\DOMElement $sectionNode): array
+    public static function parse_section_siblings(\DOMElement $sectionNode): array
     {
         $entries = [];
         $current = null;
@@ -371,7 +372,7 @@ final class PhpWeeklyNews
         return $entries;
     }
 
-    private static function fetch_issue(Client $client, string $sourceUrl): string
+    public static function fetch_issue(Client $client, string $sourceUrl): string
     {
         try {
             $response = $client->get($sourceUrl);
@@ -392,7 +393,7 @@ final class PhpWeeklyNews
         return $body;
     }
 
-    private static function build_target_path(string $outputDir, CarbonImmutable $publicationDate): string
+    public static function build_target_path(string $outputDir, CarbonImmutable $publicationDate): string
     {
         $normalizedDir = rtrim($outputDir, DIRECTORY_SEPARATOR);
         $filename = sprintf('%s-boletin-mensual.md', $publicationDate->format('Y-m'));
@@ -400,7 +401,7 @@ final class PhpWeeklyNews
         return $normalizedDir . DIRECTORY_SEPARATOR . $filename;
     }
 
-    private static function ensure_directory(string $directory): void
+    public static function ensure_directory(string $directory): void
     {
         if (is_dir($directory)) {
             return;
@@ -411,20 +412,26 @@ final class PhpWeeklyNews
         }
     }
 
-    private static function normalize_text(\DOMNode $node): string
+    public static function normalize_text(\DOMNode $node): string
     {
         if ($node instanceof \DOMText) {
-            return trim(html_entity_decode($node->wholeText, ENT_QUOTES | ENT_HTML5));
+            return self::normalize_whitespace(html_entity_decode($node->wholeText, ENT_QUOTES | ENT_HTML5));
         }
 
         if ($node instanceof \DOMElement && $node->tagName !== 'br') {
-            return trim(html_entity_decode($node->textContent ?? '', ENT_QUOTES | ENT_HTML5));
+            return self::normalize_whitespace(html_entity_decode($node->textContent ?? '', ENT_QUOTES | ENT_HTML5));
         }
 
         return '';
     }
 
-    private static function summarize_english_description(string $description): string
+    public static function normalize_whitespace(string $value): string
+    {
+        $value = str_replace("\u{A0}", ' ', $value);
+        return trim($value);
+    }
+
+    public static function summarize_english_description(string $description): string
     {
         $clean = preg_replace('/\s+/u', ' ', trim(html_entity_decode($description, ENT_QUOTES | ENT_HTML5))) ?? '';
 
@@ -440,7 +447,7 @@ final class PhpWeeklyNews
         return 'Resumen (inglés): ' . $clean;
     }
 
-    private static function format_month_year(CarbonImmutable $date): string
+    public static function format_month_year(CarbonImmutable $date): string
     {
         $months = [
             1 => 'enero',
@@ -462,7 +469,7 @@ final class PhpWeeklyNews
         return sprintf('%s %s', self::capitalize($month), $date->format('Y'));
     }
 
-    private static function capitalize(string $value): string
+    public static function capitalize(string $value): string
     {
         if ($value === '') {
             return '';
@@ -471,12 +478,12 @@ final class PhpWeeklyNews
         return mb_convert_case($value, MB_CASE_TITLE, 'UTF-8');
     }
 
-    private static function ensure_trailing_newline(string $content): string
+    public static function ensure_trailing_newline(string $content): string
     {
         return rtrim($content, "\n") . "\n";
     }
 
-    private static function resolve_url(string $baseUrl, string $path): string
+    public static function resolve_url(string $baseUrl, string $path): string
     {
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
             return $path;
@@ -488,7 +495,7 @@ final class PhpWeeklyNews
         return $base . $relative;
     }
 
-    private static function extract_base_url(string $url): string
+    public static function extract_base_url(string $url): string
     {
         $components = parse_url($url);
 
@@ -506,7 +513,7 @@ final class PhpWeeklyNews
     /**
      * @param callable(string):void|null $logger
      */
-    private static function log(?callable $logger, string $message): void
+    public static function log(?callable $logger, string $message): void
     {
         if ($logger !== null) {
             $logger($message);
