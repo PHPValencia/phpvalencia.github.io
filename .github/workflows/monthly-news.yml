@@ -29,8 +29,10 @@ jobs:
 
       - name: Abort if not last day
         if: steps.schedule.outputs.run != 'true'
+        env:
+          TODAY: ${{ steps.schedule.outputs.today }}
         run: |
-          echo "Hoy (${steps.schedule.outputs.today}) no es el último día del mes. No se genera boletín."
+          echo "Hoy (${TODAY}) no es el último día del mes. No se genera boletín."
           exit 0
 
       - name: Set up PHP
