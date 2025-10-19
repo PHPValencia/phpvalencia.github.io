@@ -4,7 +4,7 @@ Página web principal de PHP Valencia.
 
 ## Deploy
 
-La publicación en GitHub Pages se automatiza mediante el workflow `.github/workflows/static.yml`:
+La publicación en GitHub Pages se automatiza mediante el workflow `.github/workflows/static.yml`.
 
 No es necesario subir los ficheros compilados al repositorio; basta con que el código fuente esté actualizado para que el despliegue se genere automáticamente.
 
@@ -58,3 +58,26 @@ bin/cli meetup:generate-markdown \
   --input-dir meetup_events_data \
   --output-dir source/_events
 ```
+
+### Generar el boletín mensual de noticias
+
+El boletín mensual se construye recopilando todas las ediciones del archivo de PHP Weekly que pertenezcan al mes en curso. El comando descarga cada publicación, fusiona las secciones relevantes y genera el fichero Markdown correspondiente en `source/_news`:
+
+```bash
+bin/cli news:generate-monthly \
+  --output-dir source/_news \
+  --archive-url https://www.phpweekly.com/archive.html \
+  --month 2025-10
+```
+
+El parámetro `--month` es opcional (por defecto usa el mes actual en UTC) y permite regenerar meses anteriores. Ajusta `--archive-url` si necesitas apuntar a otra página de archivo o a un mirror temporal.
+
+## Automatización del boletín
+
+El workflow `.github/workflows/monthly-news.yml` se ejecuta automáticamente el último día de cada mes (y admite ejecución manual con `workflow_dispatch`). Este proceso:
+
+- instala las dependencias del proyecto
+- ejecuta `bin/cli news:generate-monthly` para crear la entrada
+- abre un Pull Request en borrador con los cambios detectados bajo una rama `news/boletin-YYYY-MM`
+
+Con ello, basta con revisar e integrar el PR para que la nueva edición quede publicada tras el despliegue habitual de GitHub Pages.
