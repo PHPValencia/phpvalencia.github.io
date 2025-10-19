@@ -449,33 +449,8 @@ final class PhpWeeklyNews
 
     public static function format_month_year(CarbonImmutable $date): string
     {
-        $months = [
-            1 => 'enero',
-            2 => 'febrero',
-            3 => 'marzo',
-            4 => 'abril',
-            5 => 'mayo',
-            6 => 'junio',
-            7 => 'julio',
-            8 => 'agosto',
-            9 => 'septiembre',
-            10 => 'octubre',
-            11 => 'noviembre',
-            12 => 'diciembre',
-        ];
-
-        $month = $months[(int) $date->format('n')] ?? '';
-
-        return sprintf('%s %s', self::capitalize($month), $date->format('Y'));
-    }
-
-    public static function capitalize(string $value): string
-    {
-        if ($value === '') {
-            return '';
-        }
-
-        return mb_convert_case($value, MB_CASE_TITLE, 'UTF-8');
+        $label = $date->locale('es')->isoFormat('MMMM YYYY');
+        return mb_convert_case($label, MB_CASE_TITLE, 'UTF-8');
     }
 
     public static function ensure_trailing_newline(string $content): string
