@@ -261,6 +261,28 @@ nav li a.selected {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    text-align: left;
+}
+
+#main section.content.single h1,
+#main section.content.single h2,
+#main section.content.single h3,
+#main section.content.single h4,
+#main section.content.single h5,
+#main section.content.single h6 {
+    text-align: center;
+}
+
+#main section.content.single ul,
+#main section.content.single ol {
+    margin: 0 0 1.2em;
+    padding-left: 1.4em;
+    text-align: left;
+    list-style-position: outside;
+}
+
+#main section.content.single li {
+    margin-bottom: 0.6em;
 }
 
 #main section.content h2 {
