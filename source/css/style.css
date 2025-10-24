@@ -172,12 +172,13 @@ nav ul {
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 5px;
+    display: block;
+    margin: 6px 0;
 }
 
 nav li a,
 nav li a:visited {
+    display: block;
     color: #fff;
     background-color: rgba(35, 86, 186, 0.8);
     font-size: 18px;
@@ -252,6 +253,34 @@ nav li a.selected {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+
+#main section.content.single {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#main section.content.single h1,
+#main section.content.single h2,
+#main section.content.single h3,
+#main section.content.single h4,
+#main section.content.single h5,
+#main section.content.single h6 {
+    text-align: center;
+}
+
+#main section.content.single ul,
+#main section.content.single ol {
+    margin: 0 0 1.2em;
+    padding-left: 1.4em;
+    text-align: left;
+    list-style-position: outside;
+}
+
+#main section.content.single li {
+    margin-bottom: 0.6em;
 }
 
 #main section.content h2 {
@@ -534,8 +563,17 @@ a.sponsor_image {
         font-size: 28px;
         line-height: 30px;
     }
+    nav ul {
+        margin: 10px 0 10px 0;
+        padding: 0;
+    }
+    nav li {
+        display: inline-block;
+        margin: 0 5px;
+    }
     nav li a,
     nav li a:visited {
+        display: inline-block;
         font-size: 22px;
         line-height: 28px;
         padding: 5px 15px;
