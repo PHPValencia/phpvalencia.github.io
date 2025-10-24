@@ -172,12 +172,13 @@ nav ul {
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 5px;
+    display: block;
+    margin: 6px 0;
 }
 
 nav li a,
 nav li a:visited {
+    display: block;
     color: #fff;
     background-color: rgba(35, 86, 186, 0.8);
     font-size: 18px;
@@ -534,8 +535,17 @@ a.sponsor_image {
         font-size: 28px;
         line-height: 30px;
     }
+    nav ul {
+        margin: 10px 0 10px 0;
+        padding: 0;
+    }
+    nav li {
+        display: inline-block;
+        margin: 0 5px;
+    }
     nav li a,
     nav li a:visited {
+        display: inline-block;
         font-size: 22px;
         line-height: 28px;
         padding: 5px 15px;
