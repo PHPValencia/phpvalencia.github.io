@@ -258,8 +258,6 @@ nav li a.selected {
 #main section.content.single {
     width: 100%;
     max-width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-align: left;
 }
