@@ -19,7 +19,7 @@
     <section class="last">
         <h3>Agradecimientos</h3>
         <p>
-            <a class="ir block iukanet" target="_blank" href="http://www.iukanet.com" title="Iukanet | Soluciones Cloud Hosting en Valencia">Iukanet</a>
+            <a class="ir block iukanet" target="_blank" href="https://www.iukanet.com" title="Iukanet | Soluciones Cloud Hosting en Valencia">Iukanet</a>
         </p>
     </section>
 </footer>

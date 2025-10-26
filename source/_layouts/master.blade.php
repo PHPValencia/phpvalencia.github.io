@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta name="viewport" content="width=device-width" />
-    <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/libs/modernizr.min.js"></script>
