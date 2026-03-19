@@ -8,12 +8,22 @@
     "status": "PAST",
     "eventType": "PHYSICAL",
     "featuredEventPhoto": null,
+    "displayPhoto": {
+        "__typename": "PhotoInfo",
+        "id": "446784988",
+        "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg",
+        "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/"
+    },
     "eventHosts": [
         {
             "__typename": "EventHost",
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -47,7 +57,7 @@
     },
     "goingCount": {
         "__typename": "RsvpConnection",
-        "totalCount": 10
+        "totalCount": 9
     },
     "waitlistMode": "AUTO",
     "guestsAllowed": true,
@@ -76,6 +86,10 @@
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -86,7 +100,90 @@
     "feeSettings": null,
     "networkEvent": null,
     "speakerDetails": null,
-    "socialProofInsights": null,
+    "socialProofInsights": {
+        "__typename": "SocialProofInsights",
+        "isTrendingEvent": false,
+        "totalInterestedUsers": 33,
+        "interestedUsersSample": [
+            {
+                "__typename": "Member",
+                "id": "128444682",
+                "name": "David Hern\u00e1ndez",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "286455205",
+                    "source": "https://secure.meetupstatic.com/photos/member/3/b/6/5/highres_286455205.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "189545461",
+                "name": "Valentin Rusev",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "247642760",
+                    "source": "https://secure.meetupstatic.com/photos/member/5/8/e/8/highres_247642760.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "204813219",
+                "name": "Marcos Baldov\u00ed Mart\u00ednez",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "256467736",
+                    "source": "https://secure.meetupstatic.com/photos/member/6/c/5/8/highres_256467736.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "195422783",
+                "name": "Nacho Salvador",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "251310874",
+                    "source": "https://secure.meetupstatic.com/photos/member/7/8/9/a/highres_251310874.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "149587382",
+                "name": "David P.",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "246063978",
+                    "source": "https://secure.meetupstatic.com/photos/member/f/8/a/highres_246063978.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "203328826",
+                "name": "Carlos GO",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "256483139",
+                    "source": "https://secure.meetupstatic.com/photos/member/a/8/8/3/highres_256483139.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "76534302",
+                "name": "Jonathan L\u00f3pez",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "260429784",
+                    "source": "https://secure.meetupstatic.com/photos/member/7/4/5/8/highres_260429784.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            }
+        ]
+    },
     "group": {
         "__typename": "Group",
         "id": "18577011",
@@ -192,7 +289,7 @@
             "__typename": "GroupStats",
             "memberCounts": {
                 "__typename": "GroupMemberCounts",
-                "all": 906
+                "all": 790
             }
         },
         "needsQuestions": false,
@@ -212,6 +309,7 @@
         "isInCumulativeImpactTreatment": false
     },
     "sponsoredUntil": null,
+    "komootUrl": null,
     "timezone": "Europe/Madrid",
     "waiting": 0,
     "timeStatus": "ENDED",
@@ -220,6 +318,10 @@
         "memberId": "131917172",
         "id": "131917172",
         "name": "Carlos Reig",
+        "member": {
+            "__typename": "Member",
+            "isSuperOrganizer": false
+        },
         "memberPhoto": {
             "__typename": "PhotoInfo",
             "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",

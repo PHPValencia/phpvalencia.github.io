@@ -8,12 +8,22 @@
     "status": "PAST",
     "eventType": "PHYSICAL",
     "featuredEventPhoto": null,
+    "displayPhoto": {
+        "__typename": "PhotoInfo",
+        "id": "446784988",
+        "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg",
+        "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/"
+    },
     "eventHosts": [
         {
             "__typename": "EventHost",
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -47,7 +57,7 @@
     },
     "goingCount": {
         "__typename": "RsvpConnection",
-        "totalCount": 10
+        "totalCount": 8
     },
     "waitlistMode": "AUTO",
     "guestsAllowed": true,
@@ -76,6 +86,10 @@
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -91,17 +105,6 @@
         "isTrendingEvent": false,
         "totalInterestedUsers": 25,
         "interestedUsersSample": [
-            {
-                "__typename": "Member",
-                "id": "204466554",
-                "name": "David Pestana",
-                "memberPhoto": {
-                    "__typename": "PhotoInfo",
-                    "id": "256217214",
-                    "source": "https://secure.meetupstatic.com/photos/member/4/3/3/e/highres_256217214.jpeg",
-                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
-                }
-            },
             {
                 "__typename": "Member",
                 "id": "76534302",
@@ -165,6 +168,17 @@
                     "__typename": "PhotoInfo",
                     "id": "254969416",
                     "source": "https://secure.meetupstatic.com/photos/member/7/2/e/8/highres_254969416.jpeg",
+                    "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
+                }
+            },
+            {
+                "__typename": "Member",
+                "id": "186949762",
+                "name": "Manuel L\u00f3pez Torrent",
+                "memberPhoto": {
+                    "__typename": "PhotoInfo",
+                    "id": "277837477",
+                    "source": "https://secure.meetupstatic.com/photos/member/9/2/6/5/highres_277837477.jpeg",
                     "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/"
                 }
             }
@@ -275,7 +289,7 @@
             "__typename": "GroupStats",
             "memberCounts": {
                 "__typename": "GroupMemberCounts",
-                "all": 906
+                "all": 790
             }
         },
         "needsQuestions": false,
@@ -295,6 +309,7 @@
         "isInCumulativeImpactTreatment": false
     },
     "sponsoredUntil": null,
+    "komootUrl": null,
     "timezone": "Europe/Madrid",
     "waiting": 0,
     "timeStatus": "ENDED",
@@ -303,6 +318,10 @@
         "memberId": "131917172",
         "id": "131917172",
         "name": "Carlos Reig",
+        "member": {
+            "__typename": "Member",
+            "isSuperOrganizer": false
+        },
         "memberPhoto": {
             "__typename": "PhotoInfo",
             "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",

@@ -13,12 +13,22 @@
         "source": "https://secure.meetupstatic.com/photos/event/1/0/0/6/highres_478744102.jpeg",
         "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/"
     },
+    "displayPhoto": {
+        "__typename": "PhotoInfo",
+        "id": "478744102",
+        "source": "https://secure.meetupstatic.com/photos/event/1/0/0/6/highres_478744102.jpeg",
+        "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/"
+    },
     "eventHosts": [
         {
             "__typename": "EventHost",
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -81,6 +91,10 @@
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -197,7 +211,7 @@
             "__typename": "GroupStats",
             "memberCounts": {
                 "__typename": "GroupMemberCounts",
-                "all": 906
+                "all": 790
             }
         },
         "needsQuestions": false,
@@ -217,6 +231,7 @@
         "isInCumulativeImpactTreatment": false
     },
     "sponsoredUntil": null,
+    "komootUrl": null,
     "timezone": "Europe/Madrid",
     "waiting": 0,
     "timeStatus": "ENDED",
@@ -225,6 +240,10 @@
         "memberId": "131917172",
         "id": "131917172",
         "name": "Carlos Reig",
+        "member": {
+            "__typename": "Member",
+            "isSuperOrganizer": false
+        },
         "memberPhoto": {
             "__typename": "PhotoInfo",
             "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",

@@ -1,11 +1,11 @@
 {
     "__typename": "Event",
-    "id": "307339901",
-    "token": "307339901",
-    "title": "Quedada PHPera",
-    "description": "\u00a1Hola!\n\nEst\u00e1s convocado el mi\u00e9rcoles d\u00eda 23 de abril a las 19:30 en el pub MaxMax de la plaza X\u00faquer para tomar unas cervezas/vinos/refrescos/lo que quieras con la comunidad de PHP en Valencia.\n\nComo el grupo lleva mas de dos a\u00f1os inactivo, nos estamos planteando qu\u00e9 hacer con \u00e9l. El objetivo del evento es vernos y hablar sobre las diferentes alternativas que tenemos.\n\n\u00a1Nos vemos el mi\u00e9rcoles!",
-    "eventUrl": "https://www.meetup.com/php-valencia/events/307339901/",
-    "status": "PAST",
+    "id": "313767725",
+    "token": "313767725",
+    "title": "Periplo a lo desconocido",
+    "description": "\u00a1Hola!\n\nS\u00ed, lo sabemos\u2026 este meetup ha estado m\u00e1s tiempo parado que la escritura de los \u00faltimos libros de Juego de Tronos. Pero como pasa con muchos proyectos en PHP: puede que pasen los a\u00f1os, cambien las versiones y se acumulen los *commits*, pero mientras haya comunidad siempre merece la pena volver a ponerlo en marcha.\n\nY para retomar la actividad, qu\u00e9 mejor que hacerlo con una historia real de producto y tecnolog\u00eda.\n\nA veces en los meetups hablamos de frameworks, de herramientas o de buenas pr\u00e1cticas. Pero de vez en cuando tambi\u00e9n es interesante mirar un poco m\u00e1s lejos y hablar de algo que todos hemos vivido alguna vez: empezar un proyecto desde cero y ver hasta d\u00f3nde puede llegar.\n\nEl pr\u00f3ximo mi\u00e9rcoles 25 de marzo de 2026 a las 18:30 tenemos una charla de Samuel Vicent, CTO de Take a Chef, que nos contar\u00e1 precisamente esa historia.\n\nTake a Chef empez\u00f3 como empiezan muchos proyectos: con un MVP bastante sencillo construido con PHP (Symfony), MySQL y Bootstrap, sin microservicios ni arquitecturas especialmente sofisticadas. Solo dos personas en IT y un objetivo muy claro: construir producto y validar una idea en un mercado donde el concepto de *chef a domicilio* pr\u00e1cticamente no exist\u00eda.\n\nDesde entonces han pasado muchas cosas.\n\nEn esta charla, Samuel compartir\u00e1 c\u00f3mo ha evolucionado el proyecto desde aquellos primeros commits hasta convertirse en una plataforma internacional, con una infraestructura mucho m\u00e1s madura: PostgreSQL, APIs, Kafka, AI\u2026 acompa\u00f1ando el crecimiento del negocio y con integraciones estrat\u00e9gicas como Airbnb Services.\n\nUna historia real sobre c\u00f3mo escalar tecnolog\u00eda, equipo y producto cuando empiezas pr\u00e1cticamente desde cero.\n\nComo siempre, despu\u00e9s de la charla tendremos un rato para hacer networking, comentar la jugada y ponernos al d\u00eda.\n\n\u00a1Nos vemos el mi\u00e9rcoles!",
+    "eventUrl": "https://www.meetup.com/php-valencia/events/313767725/",
+    "status": "ACTIVE",
     "eventType": "PHYSICAL",
     "featuredEventPhoto": null,
     "displayPhoto": {
@@ -31,21 +31,21 @@
             }
         }
     ],
-    "dateTime": "2025-04-23T18:30:00+02:00",
-    "endTime": "2025-04-23T20:30:00+02:00",
+    "dateTime": "2026-03-25T18:30:00+01:00",
+    "endTime": "2026-03-25T21:30:00+01:00",
     "isFeatured": false,
     "venue": {
         "__typename": "Venue",
-        "id": "18760672",
-        "name": "MaxMax",
-        "address": "Calle del Vinalopo, 11, 46021",
+        "id": "27920762",
+        "name": "La Harinera",
+        "address": "C/ de Joan Verdeguer, 116, Poblados Mar\u00edtimos, 46024 Val\u00e8ncia, Valencia, Spain",
         "city": "Valencia",
         "state": "",
         "country": "es",
-        "lat": 39.477634,
-        "lng": -0.350445
+        "lat": 39.4586,
+        "lng": -0.336509
     },
-    "maxTickets": 0,
+    "maxTickets": 30,
     "series": null,
     "rsvps": {
         "__typename": "RsvpConnection",
@@ -57,11 +57,11 @@
     },
     "goingCount": {
         "__typename": "RsvpConnection",
-        "totalCount": 5
+        "totalCount": 12
     },
     "waitlistMode": "AUTO",
-    "guestsAllowed": true,
-    "numberOfAllowedGuests": 2,
+    "guestsAllowed": false,
+    "numberOfAllowedGuests": 0,
     "proCompleteRsvp": null,
     "topics": {
         "__typename": "TopicsConnection",
@@ -229,7 +229,7 @@
     "komootUrl": null,
     "timezone": "Europe/Madrid",
     "waiting": 0,
-    "timeStatus": "ENDED",
+    "timeStatus": "UPCOMING",
     "host": {
         "__typename": "EventHost",
         "memberId": "131917172",
