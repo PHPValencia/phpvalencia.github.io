@@ -8,12 +8,22 @@
     "status": "PAST",
     "eventType": "PHYSICAL",
     "featuredEventPhoto": null,
+    "displayPhoto": {
+        "__typename": "PhotoInfo",
+        "id": "446784988",
+        "source": "https://secure.meetupstatic.com/photos/event/6/1/9/c/highres_446784988.jpeg",
+        "baseUrl": "https://secure-content.meetupstatic.com/images/classic-events/"
+    },
     "eventHosts": [
         {
             "__typename": "EventHost",
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -25,6 +35,10 @@
             "memberId": "189545461",
             "id": "189545461",
             "name": "Valentin Rusev",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -58,7 +72,7 @@
     },
     "goingCount": {
         "__typename": "RsvpConnection",
-        "totalCount": 47
+        "totalCount": 44
     },
     "waitlistMode": "AUTO",
     "guestsAllowed": false,
@@ -72,7 +86,8 @@
                 "node": {
                     "__typename": "Topic",
                     "id": "789",
-                    "name": "MySQL"
+                    "name": "MySQL",
+                    "urlkey": "mysql"
                 }
             },
             {
@@ -80,7 +95,8 @@
                 "node": {
                     "__typename": "Topic",
                     "id": "150844",
-                    "name": "PHP"
+                    "name": "PHP",
+                    "urlkey": "php"
                 }
             },
             {
@@ -88,7 +104,8 @@
                 "node": {
                     "__typename": "Topic",
                     "id": "8192",
-                    "name": "Open Source"
+                    "name": "Open Source",
+                    "urlkey": "open-source"
                 }
             },
             {
@@ -96,7 +113,8 @@
                 "node": {
                     "__typename": "Topic",
                     "id": "15582",
-                    "name": "Web Development"
+                    "name": "Web Development",
+                    "urlkey": "web-development"
                 }
             },
             {
@@ -104,7 +122,8 @@
                 "node": {
                     "__typename": "Topic",
                     "id": "788002",
-                    "name": "Web Technology"
+                    "name": "Web Technology",
+                    "urlkey": "web-technology"
                 }
             }
         ]
@@ -128,6 +147,10 @@
             "memberId": "131917172",
             "id": "131917172",
             "name": "Carlos Reig",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -139,6 +162,10 @@
             "memberId": "189545461",
             "id": "189545461",
             "name": "Valentin Rusev",
+            "member": {
+                "__typename": "Member",
+                "isSuperOrganizer": false
+            },
             "memberPhoto": {
                 "__typename": "PhotoInfo",
                 "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
@@ -255,7 +282,7 @@
             "__typename": "GroupStats",
             "memberCounts": {
                 "__typename": "GroupMemberCounts",
-                "all": 906
+                "all": 790
             }
         },
         "needsQuestions": false,
@@ -275,6 +302,7 @@
         "isInCumulativeImpactTreatment": false
     },
     "sponsoredUntil": null,
+    "komootUrl": null,
     "timezone": "Europe/Madrid",
     "waiting": 0,
     "timeStatus": "ENDED",
@@ -283,6 +311,10 @@
         "memberId": "131917172",
         "id": "131917172",
         "name": "Carlos Reig",
+        "member": {
+            "__typename": "Member",
+            "isSuperOrganizer": false
+        },
         "memberPhoto": {
             "__typename": "PhotoInfo",
             "baseUrl": "https://secure-content.meetupstatic.com/images/classic-member/",
